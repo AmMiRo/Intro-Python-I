@@ -11,16 +11,13 @@ https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
 
 # YOUR CODE HERE
 
-import os
-
-
 def read_and_print(file_name):
     f = open(file_name, "r")
     data = f.read()
     print(data)
     f.close()
 
-read_and_print("c:/Users/Rose/Desktop/Git/Lambda/06-CS/01-Intro-to-Python-and-OOP/Intro-Python-I/src/foo.txt")
+read_and_print("./src/foo.txt")
 
 # Open up a file called "bar.txt" (which doesn't exist yet) for
 # writing. Write three lines of arbitrary content to that file,
@@ -38,4 +35,4 @@ def create_and_print(file_name):
     print(data)
     r.close()
 
-create_and_print("bar.txt")
+create_and_print("./src/bar.txt")
