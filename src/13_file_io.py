@@ -11,9 +11,31 @@ https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
 
 # YOUR CODE HERE
 
+import os
+
+
+def read_and_print(file_name):
+    f = open(file_name, "r")
+    data = f.read()
+    print(data)
+    f.close()
+
+read_and_print("c:/Users/Rose/Desktop/Git/Lambda/06-CS/01-Intro-to-Python-and-OOP/Intro-Python-I/src/foo.txt")
+
 # Open up a file called "bar.txt" (which doesn't exist yet) for
 # writing. Write three lines of arbitrary content to that file,
 # then close the file. Open up "bar.txt" and inspect it to make
 # sure that it contains what you expect it to contain
 
 # YOUR CODE HERE
+
+def create_and_print(file_name):
+    f = open(file_name, "w")
+    f.write("arbitrary content\narbitrary content\narbitrary content")
+    f.close()
+    r = open(file_name, "r")
+    data = r.read()
+    print(data)
+    r.close()
+
+create_and_print("bar.txt")
