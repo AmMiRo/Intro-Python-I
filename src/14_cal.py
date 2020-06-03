@@ -31,3 +31,35 @@ import sys
 import calendar
 from datetime import datetime
 
+selection = input("Please type a month in the MM/YYYY format.").split("/")
+today = datetime.today()
+year = today.year
+month = today.month
+
+if len(selection) == 1:
+    if selection[0] == "":
+      calendar.prmonth(year, month)
+      exit()
+    elif selection[0].isdigit() and int(selection[0]) >= 1 and int(selection[0]) <= 12:
+      month = int(selection[0])
+      calendar.prmonth(year, month)
+      exit()
+    else:
+      print("Please type a month in the MM/YYYY format.")
+      exit() 
+elif len(selection) == 2:
+    if selection[0].isdigit() and selection[1].isdigit():
+      if int(selection[0]) >= 1 and int(selection[0]) <= 12:
+        month = int(selection[0])
+        year = int(selection[1])
+        calendar.prmonth(year, month)
+        exit()
+      else:
+        print("Please type a month in the MM/YYYY format.")
+        exit()
+    else:
+      print("Please type a month in the MM/YYYY format.")
+      exit()
+else:
+  print("Please type a month in the MM/YYYY format.")
+  exit()
